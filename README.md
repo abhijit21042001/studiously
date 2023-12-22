@@ -1,4 +1,4 @@
-![Screenshot (153)](https://github.com/abhijit21042001/studiously/assets/72152220/3ce07ca7-0966-488a-b874-3898b3a1835c)# studiously
+# studiously
 Internship Project
 
 Crude operation using the Spring MVC, Java, JSP, PostgreSql, Javascript, HTML5, CSS3, Bootstrap4
