@@ -1,6 +1,6 @@
 package com.jdbc.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class M_roles {
 
@@ -8,7 +8,7 @@ public class M_roles {
 	private String role;
 	private String role_description;
 	private String update_by;
-	private Date  update_timestamp;
+	private Timestamp  update_timestamp;
 	
 	
 	public String getRole_id() {
@@ -35,13 +35,13 @@ public class M_roles {
 	public void setUpdate_by(String update_by) {
 		this.update_by = update_by;
 	}
-	public Date getUpdate_timestamp() {
+	public Timestamp getUpdate_timestamp() {
 		return update_timestamp;
 	}
-	public void setUpdate_timestamp(Date update_timestamp) {
+	public void setUpdate_timestamp(Timestamp update_timestamp) {
 		this.update_timestamp = update_timestamp;
 	}
-	public M_roles(String role_id, String role, String role_description, String update_by, Date update_timestamp) {
+	public M_roles(String role_id, String role, String role_description, String update_by, Timestamp update_timestamp) {
 		super();
 		this.role_id = role_id;
 		this.role = role;

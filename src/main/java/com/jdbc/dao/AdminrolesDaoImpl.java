@@ -22,7 +22,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 //create methode for Adminroles	
 	@Override
 	public int createAdminroles(Adminroles adminroles) {
-		String sql = "insert into adminroles(role_id,update_by,update_timestamp,admin_id,is_active,is_fullright) values(?,?,?,?,?,?)";
+		String sql = "insert into admin_roles(role_id,update_by,update_timestamp,admin_id,is_active,is_fullright) values(?,?,?,?,?,?)";
 		try {
 			int counter = jdbcTemplate.update(sql,
 					new Object[] { adminroles.getRole_id(), adminroles.getUpdate_by(), adminroles.getUpdate_timestamp(),
@@ -40,7 +40,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 //read method for adminroles
 	@Override
 	public List<Adminroles> readAdminroles() {
-		List<Adminroles> adminrolesList = jdbcTemplate.query("SELECT *FROM adminroles", new RowMapper<Adminroles>() {
+		List<Adminroles> adminrolesList = jdbcTemplate.query("SELECT *FROM admin_roles", new RowMapper<Adminroles>() {
 
 			@Override
 			public Adminroles mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -49,7 +49,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 				adminroles.setAdmin_role_id(rs.getInt("admin_role_id"));
 				adminroles.setRole_id(rs.getString("role_id"));
 				adminroles.setUpdate_by(rs.getString("update_by"));
-				adminroles.setUpdate_timestamp(rs.getDate("update_timestamp"));
+				adminroles.setUpdate_timestamp(rs.getTimestamp("update_timestamp"));
 				adminroles.setAdmin_id(rs.getInt("admin_id"));
 				adminroles.setIs_active(rs.getBoolean("is_active"));
 				adminroles.setIs_fullright(rs.getBoolean("is_fullright"));
@@ -65,7 +65,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 	@Override
 	public List<Adminroles> findAdminrolesById(int admin_role_id) {
 
-		List<Adminroles> Ladminroels = jdbcTemplate.query("SELECT * FROM adminroles where admin_role_id=?",
+		List<Adminroles> Ladminroels = jdbcTemplate.query("SELECT * FROM admin_roles where admin_role_id=?",
 				new Object[] { admin_role_id }, new RowMapper<Adminroles>() {
 					@Override
 					public Adminroles mapRow(ResultSet rs, int rnum) throws SQLException {
@@ -74,7 +74,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 						adminroles.setAdmin_role_id(rs.getInt("admin_role_id"));
 						adminroles.setRole_id(rs.getString("role_id"));
 						adminroles.setUpdate_by(rs.getString("update_by"));
-						adminroles.setUpdate_timestamp(rs.getDate("update_timestamp"));
+						adminroles.setUpdate_timestamp(rs.getTimestamp("update_timestamp"));
 						adminroles.setAdmin_id(rs.getInt("admin_id"));
 						adminroles.setIs_active(rs.getBoolean("is_active"));
 						adminroles.setIs_fullright(rs.getBoolean("is_fullright"));
@@ -89,7 +89,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 // below functions like update is not used yet in the case of adminRoles 	
 	@Override
 	public int updateAdminroles(Adminroles adminroles) {
-		String sql = "update adminroles set admin_role_id=?,role_id=?,update_by=?"
+		String sql = "update admin_roles set admin_role_id=?,role_id=?,update_by=?"
 				+ "update_timestamp=?,admin_id=?,is_active=?,is_fullright=? where admin_role_id=?";
 		try {
 			int counter = jdbcTemplate.update(sql,
@@ -106,7 +106,7 @@ public class AdminrolesDaoImpl implements AdminrolesDao {
 //This implementation is used in the AdinUsers Update AdminUsers	
 	@Override
 	public int deleteAdmin_users(int admin_role_id) {
-		String sql = "delete from adminroles where admin_role_id=?";
+		String sql = "delete from admin_roles where admin_role_id=?";
 		try {
 			int counter = jdbcTemplate.update(sql, new Object[] { admin_role_id });
 			return counter;

@@ -28,8 +28,7 @@
             	
             	 
             	
-            	<p>Task 2 (dummyT):
-            	<a href="${pageContext.request.contextPath}/read" class="btn btn-primary btn-lg">ReadStudentData</a>
+            	<p>
             	</p>
             	<p>AdminUser :
             	<a href="${pageContext.request.contextPath}/admin_users_list" class="btn btn-primary btn-lg">Admin_Users List</a>

@@ -1,7 +1,6 @@
 package com.jdbc.model;
 
-import java.util.Date;
-
+import java.sql.Timestamp;
 
 public class Admin_users {
 	private int admin_id;
@@ -10,9 +9,9 @@ public class Admin_users {
 	private String email;
 	private String mobile_number;
 	private String passwd;
-	private Date reg_timestamp;
+	private Timestamp reg_timestamp;
 	private String update_by ;
-	private Date update_timestamp;
+	private Timestamp update_timestamp;
 	private String account_status_code;
 	private String email_verification_code;
 	private String mobile_verification_code;
@@ -58,10 +57,10 @@ public class Admin_users {
 		public void setPasswd(String passwd) {
 			this.passwd = passwd;
 		}
-		public Date getReg_timestamp() {
+		public Timestamp getReg_timestamp() {
 			return reg_timestamp;
 		}
-		public void setReg_timestamp(Date reg_timestamp) {
+		public void setReg_timestamp(Timestamp reg_timestamp) {
 			this.reg_timestamp = reg_timestamp;
 		}
 		public String getUpdate_by() {
@@ -70,10 +69,10 @@ public class Admin_users {
 		public void setUpdate_by(String update_by) {
 			this.update_by = update_by;
 		}
-		public Date getUpdate_timestamp() {
+		public Timestamp getUpdate_timestamp() {
 			return update_timestamp;
 		}
-		public void setUpdate_timestamp(Date update_timestamp) {
+		public void setUpdate_timestamp(Timestamp update_timestamp) {
 			this.update_timestamp = update_timestamp;
 		}
 		public String getAccount_status_code() {
@@ -146,6 +145,7 @@ public class Admin_users {
 					+ email_verification_code + ", mobile_verification_code=" + mobile_verification_code + ", division="
 					+ division + ", department=" + department + ", designation=" + designation + ", unit=" + unit + "]";
 		}
+		
 		
 		
 		

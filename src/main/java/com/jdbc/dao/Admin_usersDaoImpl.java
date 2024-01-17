@@ -53,9 +53,9 @@ public class Admin_usersDaoImpl implements Admin_usersDao {
 						admin_users.setEmail(rs.getString("email"));
 						admin_users.setMobile_number(rs.getString("mobile_number"));
 						admin_users.setPasswd(rs.getString("passwd"));
-						admin_users.setReg_timestamp(rs.getDate("reg_timestamp"));
+						admin_users.setReg_timestamp(rs.getTimestamp("reg_timestamp"));
 						admin_users.setUpdate_by(rs.getString("update_by"));
-						admin_users.setUpdate_timestamp(rs.getDate("update_timestamp"));
+						admin_users.setUpdate_timestamp(rs.getTimestamp("update_timestamp"));
 						admin_users.setAccount_status_code(rs.getString("account_status_code"));
 						admin_users.setEmail_verification_code(rs.getString("email_verification_code"));
 						admin_users.setMobile_verification_code(rs.getString("mobile_verification_code"));
@@ -84,9 +84,9 @@ public class Admin_usersDaoImpl implements Admin_usersDao {
 							admin_users.setEmail(rs.getString("email"));
 							admin_users.setMobile_number(rs.getString("mobile_number"));
 							admin_users.setPasswd(rs.getString("passwd"));
-							admin_users.setReg_timestamp(rs.getDate("reg_timestamp"));
+							admin_users.setReg_timestamp(rs.getTimestamp("reg_timestamp"));
 							admin_users.setUpdate_by(rs.getString("update_by"));
-							admin_users.setUpdate_timestamp(rs.getDate("update_timestamp"));
+							admin_users.setUpdate_timestamp(rs.getTimestamp("update_timestamp"));
 							admin_users.setAccount_status_code(rs.getString("account_status_code"));
 							admin_users.setEmail_verification_code(rs.getString("email_verification_code"));
 							admin_users.setMobile_verification_code(rs.getString("mobile_verification_code"));

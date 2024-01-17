@@ -1,7 +1,7 @@
 package com.jdbc.controller;
 
 import java.io.IOException;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -90,8 +90,8 @@ public class Admin_usersController {
 	  
 	  @RequestParam ("name") String name,@RequestParam("user_name") String user_name,
 	  @RequestParam("email") String email, @RequestParam("mobile_number") String mobile_number,
-	  @RequestParam("passwd") String passwd, @RequestParam ("reg_timestamp") @DateTimeFormat(pattern = "yyyy-MM-dd") Date reg_timestamp,
-	  @RequestParam("update_by")String update_by,@RequestParam("update_timestamp")@DateTimeFormat(pattern = "yyyy-MM-dd")Date update_timestamp,
+	  @RequestParam("passwd") String passwd, @RequestParam ("reg_timestamp") @DateTimeFormat(pattern = "yyyy-MM-dd") Timestamp reg_timestamp,
+	  @RequestParam("update_by")String update_by,@RequestParam("update_timestamp")@DateTimeFormat(pattern = "yyyy-MM-dd")Timestamp update_timestamp,
 	  @RequestParam("account_status_code")String account_status_code,
 	  @RequestParam("email_verification_code")String email_verification_code,@RequestParam("mobile_verification_code")String
 	  mobile_verification_code,@RequestParam("division")String division,@RequestParam("department")String
@@ -100,12 +100,14 @@ public class Admin_usersController {
 	 {	  
 	 Admin_users admin_users=new Admin_users();
 	  
+		Timestamp updateTimestamp = new Timestamp(System.currentTimeMillis());
 	  admin_users.setAdmin_id(admin_id); admin_users.setName(name);
 	  admin_users.setUser_name(user_name); admin_users.setEmail(email);
 	  admin_users.setMobile_number(mobile_number); admin_users.setPasswd(passwd);
-	  admin_users.setReg_timestamp(reg_timestamp);
+	  admin_users.setReg_timestamp(updateTimestamp);
+	  
 	  admin_users.setUpdate_by(update_by);
-	  admin_users.setUpdate_timestamp(update_timestamp);
+	  admin_users.setUpdate_timestamp(null);
 	  admin_users.setAccount_status_code(account_status_code);
 	  admin_users.setEmail_verification_code(email_verification_code);
 	  admin_users.setMobile_verification_code(mobile_verification_code);
@@ -123,7 +125,7 @@ public class Admin_usersController {
 		  }
 	  		 m.setViewName("update_admin_user"); 
 	  		 return m; 
-	  		 } 
+	  		 }
 	 }
 	  
 	 

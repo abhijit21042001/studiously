@@ -1,6 +1,8 @@
 package com.jdbc.model;
 
-import java.util.Date;
+
+import java.sql.Timestamp;
+
 
 
 
@@ -8,7 +10,7 @@ public class Adminroles {
 		private int admin_role_id; 
 		private String role_id;
 		private String update_by;
-		private Date update_timestamp;
+		private Timestamp update_timestamp;
 		private int admin_id;
 		private boolean is_active;
 		private boolean is_fullright;
@@ -31,10 +33,10 @@ public class Adminroles {
 		public void setUpdate_by(String update_by) {
 			this.update_by = update_by;
 		}
-		public Date getUpdate_timestamp() {
+		public Timestamp getUpdate_timestamp() {
 			return update_timestamp;
 		}
-		public void setUpdate_timestamp(Date update_timestamp) {
+		public void setUpdate_timestamp(Timestamp update_timestamp) {
 			this.update_timestamp = update_timestamp;
 		}
 		public int getAdmin_id() {
@@ -56,7 +58,7 @@ public class Adminroles {
 			this.is_fullright = is_fullright;
 		}
 		
-		public Adminroles(int admin_role_id, String role_id, String update_by, Date update_timestamp, int admin_id,
+		public Adminroles(int admin_role_id, String role_id, String update_by, Timestamp update_timestamp, int admin_id,
 				boolean is_active, boolean is_fullright) {
 			super();
 			this.admin_role_id = admin_role_id;

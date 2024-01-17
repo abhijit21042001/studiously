@@ -1,7 +1,7 @@
 package com.jdbc.controller;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,15 +57,16 @@ public class AdminRolesController {
 	@RequestMapping(value="/update_admin_roles", method=RequestMethod.POST)
 	public ModelAndView updateAdminroles(@RequestParam("admin_role_id")int admin_role_id,
 	@RequestParam("role_id") String role_id ,@RequestParam("update_by")String update_by,
-	@RequestParam("update_timestamp")Date update_timestamp,@RequestParam("admin_id")int admin_id,
+	@RequestParam("update_timestamp")Timestamp update_timestamp,@RequestParam("admin_id")int admin_id,
 	@RequestParam("is_active")Boolean is_active, @RequestParam("is_fullright")Boolean is_fullright,ModelAndView m) 
 	{
 		Adminroles adminroles=new Adminroles();
+		Timestamp updateTimestamp = new Timestamp(System.currentTimeMillis());
 		
 		adminroles.setAdmin_role_id(admin_role_id);
 		adminroles.setRole_id(role_id);
 		adminroles.setUpdate_by(update_by);
-		adminroles.setUpdate_timestamp(update_timestamp);
+		adminroles.setUpdate_timestamp(updateTimestamp);
 		adminroles.setAdmin_id(admin_id);
 		adminroles.setIs_active(is_active);
 		adminroles.setIs_fullright(is_fullright);
